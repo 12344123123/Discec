@@ -1,14 +1,12 @@
 package net.bancey.services;
 
-import net.dv8tion.jda.core.AccountType;
-import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.JDABuilder;
-import net.dv8tion.jda.core.entities.*;
-import net.dv8tion.jda.core.exceptions.RateLimitedException;
-
+import net.dv8tion.jda.api.AccountType;
+import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.entities.*;
+import net.dv8tion.jda.api.exceptions.RateLimitedException;
 import javax.security.auth.login.LoginException;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -20,9 +18,10 @@ public class DiscordApp {
 
     public DiscordApp(String token) {
         try {
-            jda = new JDABuilder(AccountType.BOT).setToken(token).buildBlocking();
-            jda.getPresence().setGame(Game.of("I am a non sentient being."));
-        } catch (InterruptedException | RateLimitedException | LoginException e) {
+            jda = JDABuilder.createDefault(token).build();
+            //jda = new JDABuilder(AccountType.BOT).setToken(token).buildBlocking();
+            //jda.getPresence().setGame(Game.of("I am a non sentient being."));
+        } catch (LoginException e) {
             e.printStackTrace();
         }
     }

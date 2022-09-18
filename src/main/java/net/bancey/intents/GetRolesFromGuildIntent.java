@@ -6,7 +6,7 @@ import com.amazon.speech.ui.Reprompt;
 import com.amazon.speech.ui.SimpleCard;
 import net.bancey.AlexaToDiscord;
 import net.bancey.services.DiscordApp;
-import net.dv8tion.jda.core.entities.Role;
+import net.dv8tion.jda.api.entities.Role;
 
 import java.util.ArrayList;
 

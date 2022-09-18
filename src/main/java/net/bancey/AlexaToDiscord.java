@@ -1,6 +1,8 @@
 package net.bancey;
 
 import com.amazon.speech.speechlet.Speechlet;
+import com.amazon.speech.speechlet.interfaces.system.System;
+import com.amazon.speech.speechlet.interfaces.system.SystemState;
 import com.amazon.speech.speechlet.servlet.SpeechletServlet;
 import net.bancey.services.DiscordApp;
 import net.bancey.speechlets.DiscordSpeechlet;
@@ -9,7 +11,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,7 +34,7 @@ public class AlexaToDiscord extends SpringBootServletInitializer {
      */
     public static void main(String[] args) {
         SpringApplication.run(AlexaToDiscord.class, args);
-        String token = System.getenv("DISCORD_TOKEN");
+        String token = System.getEnv("DISCORD_TOKEN");
         AlexaToDiscord.discordInstance = new DiscordApp(token);
     }
 
