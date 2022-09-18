@@ -1,8 +1,6 @@
 package net.bancey;
 
 import com.amazon.speech.speechlet.Speechlet;
-import com.amazon.speech.speechlet.interfaces.system.System;
-import com.amazon.speech.speechlet.interfaces.system.SystemState;
 import com.amazon.speech.speechlet.servlet.SpeechletServlet;
 import net.bancey.services.DiscordApp;
 import net.bancey.speechlets.DiscordSpeechlet;
@@ -34,7 +32,9 @@ public class AlexaToDiscord extends SpringBootServletInitializer {
      */
     public static void main(String[] args) {
         SpringApplication.run(AlexaToDiscord.class, args);
-        String token = System.getEnv("DISCORD_TOKEN");
+        //ask-sdk-servlet-support
+
+        String token = java.lang.System.getenv().get("DISCORD_TOKEN");
         AlexaToDiscord.discordInstance = new DiscordApp(token);
     }
 
