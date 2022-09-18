@@ -89,4 +89,8 @@ If you decide to not use [Heroku](https://dashboard.heroku.com/apps) you need to
 
 - - - -
 
+### Updates 
+2022-09-18 There have been permission changes to <a name="repo.spring.io">[repo.spring.io](https://spring.io/blog/2020/10/29/notice-of-permissions-changes-to-repo-spring-io-fall-and-winter-2020)</a>
+
+
 # Todo: finish this
